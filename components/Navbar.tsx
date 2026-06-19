@@ -59,9 +59,8 @@ export default function Navbar() {
             );
           })}
         </nav>
-
         {/* Socials & Contact Button */}
-        <div className="flex items-center gap-3.5 sm:gap-4 text-neutral-400">
+        <div className="hidden md:flex items-center gap-3.5 sm:gap-4 text-neutral-400">
           <a
             href="https://www.linkedin.com/in/ramashray-sahu-ba7539367/"
             target="_blank"
