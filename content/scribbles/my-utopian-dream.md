@@ -2,7 +2,7 @@
 title: "A Utopian Dream"
 type: "Article"
 date: "Jun 17, 2026"
-excerpt: "My hypothetical utopian world that I want you to see"
+excerpt: "My hypothetical utopian world that I wanna show you"
 tags: ["science", "open-source", "philosophy", "technology"]
 ---
 
