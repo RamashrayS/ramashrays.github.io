@@ -2,39 +2,24 @@
 title: "The Journey So Far"
 type: "Blog"
 date: "June 15, 2026"
-excerpt: "A reflection on my path through physics, coding, and the spaces where they intersect. From writing my first game to simulating complex physical systems."
+readTime: "5 min read"
+excerpt: "A reflection on my and where I see myself heading."
 tags: ["physics", "coding", "personal", "reflections"]
 ---
 
-I have always felt a bit like an outsider in both the pure physics and pure software engineering camps.
-In physics, the ultimate goal is to uncover the fundamental laws of nature—mathematically elegant, universal, and deep.
-In coding, the goal is often to build tools that work—practical, modular, and fast.
+I was brought up in a small town in Odisha called *Dhenkanal*, though quite small it holds a big place in my heart, I have spent about the first 18 years of my life there. My parents still live there but they are also planning to leave after 2 years when my father retire.
 
-My journey started when I was trying to understand how physical systems evolve.
-I wanted to see them, not just compute equations on paper.
-That curiosity led me to write my first game—a rudimentary physics puzzle game where boxes collided under simulated gravity.
-I published it on Itch.io under my old profile.
-It wasn't a masterpiece, but watching lines of code translate into motion on screen changed everything for me.
+Growing up I have had a lot of friends and a good childhood that I have fond memories of, some of those friends I am still in contacts with while some very precious ones are now people I will probably never see again. This part always fills me with sorrow, people say its a small world but it fills pretty big to me. There are like 8 billion of our species right now so I you and all will see other people make new friends and forget the old then after some years forget the people we have right now in the present.
 
-> "Computers are not just calculators; they are canvases for simulating reality."
+Some phases of life have been good some have been bad but whenever I look back I cant point out the bad ones from the good ones they all just feel equally happy. Times where when I wanted to be a Taekwondo Black Belt Dan 8 (I left the day I got my Dan 1, idk maybe my motivation wasn't true at that time), then at some point I wanted to be a Game developer, at some point I wanted to be a 6 feet 6 packs 6 figures guy by age 18 (I got neither btw I turned 18 this Jan). I have no idea where these dreams came and went by, I dont feel bad that I didnt do any of these though, I mean it would have been good to have 6 figures by now but it would be just as good when I get there in the future (ofcourse its value would be less due to inflation i know).
 
-## Finding IISER Pune and the Builder Mentality
+Currently I am doing my bachelors at IISER Pune (a decent science college in our nation if i say so myself), First year already went by I had a crazy GPA drop in the 2nd sem due to my own negligence, I missed quite a lot of opportunities. But now instead of whinning about all of it I want to focus up on what the future has to say. I should do whatever I feel like doing and see where the road leads to (thats exactly how I ended up making this site and this blog btw on a random summer weekend). 
 
-Coming to IISER Pune deepened my appreciation for scientific rigor.
-Suddenly, I was surrounded by people who cared about the spin of electron systems, statistical mechanics, and high-energy physics.
-But I realized that many scientists struggle to translate their formulas into scalable code, while many developers build software without a solid grasp of the quantitative systems underlying their data.
+I have defined my life purpose is to find out answers to Humanity's innate questions like:
+- Why does the universe exist?
+- Why we exist?
+- What or who is god if he exists?
+Now I am quite aware the probability of me finding these are next to none but the probability of me dying with regret if I dont even try is like 100%. 
+So I will keep on doing what am doing.
 
-I decided to bridge that gap.
-I began building prototypes, tools, and simulations.
-Whether it was organizing the Entrepreneurship and Innovation Cell (EIC) website or hacking together automation scripts, I wanted to build.
-This "builder mentality" became my guiding framework.
-
-## Looking Forward
-
-Currently, my focus is divided between learning advanced physics and designing workflows that automate research.
-Projects like **PaperFlow** came out of my own frustration with reading dozens of academic PDFs every week.
-By writing scripts to extract, structure, and query these papers, I saved hours of manual labor.
-
-If there is one thing I’ve learned, it’s that curiosity shouldn't be boxed in.
-You don't have to choose between being a scientist and a developer.
-You can simply be a builder who uses whatever tools are necessary to explore the universe.
+Thanks for reading this btw! 
