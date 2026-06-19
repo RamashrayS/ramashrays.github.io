@@ -13,8 +13,8 @@ export default function Navbar() {
     activeSection = "home";
   } else if (pathname === "/builds") {
     activeSection = "builds";
-  } else if (pathname === "/archive") {
-    activeSection = "archive";
+  } else if (pathname.startsWith("/scribbles")) {
+    activeSection = "scribbles";
   } else if (pathname === "/contact") {
     activeSection = "contact";
   }
@@ -22,7 +22,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/", id: "home" },
     { name: "Builds", href: "/builds", id: "builds" },
-    { name: "Archive", href: "/archive", id: "archive" },
+    { name: "Scribbles", href: "/scribbles", id: "scribbles" },
     { name: "Contact", href: "/contact", id: "contact" }
   ];
 

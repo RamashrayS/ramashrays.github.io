@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ArchivePostPage({ params }: PageProps) {
+export default async function ScribblesPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 

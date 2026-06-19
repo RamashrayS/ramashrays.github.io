@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-const postsDirectory = path.join(process.cwd(), "content/archive");
+const postsDirectory = path.join(process.cwd(), "content/scribbles");
 
 export interface PostMetadata {
   slug: string;

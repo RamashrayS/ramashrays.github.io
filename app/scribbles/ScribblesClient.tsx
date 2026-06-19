@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { PostMetadata } from "@/lib/markdown";
 
-interface ArchiveClientProps {
+interface ScribblesClientProps {
   posts: PostMetadata[];
 }
 
-export default function ArchiveClient({ posts }: ArchiveClientProps) {
+export default function ScribblesClient({ posts }: ScribblesClientProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function ArchiveClient({ posts }: ArchiveClientProps) {
             return (
               <Link
                 key={metadata.slug}
-                href={`/archive/${metadata.slug}`}
+                href={`/scribbles/${metadata.slug}`}
                 className="group bg-[#121212] border border-white/5 hover:border-white/15 rounded-2xl p-6 flex flex-col justify-between hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)] hover:-translate-y-1 transition-all duration-500 cursor-pointer h-full"
               >
                 <div className="space-y-4">
