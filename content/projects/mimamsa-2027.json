@@ -1,0 +1,9 @@
+{
+  "title": "Mimamsa 2027",
+  "description": "A prototype website I made for Mimamsa 2027",
+  "url": "https://mimamsa2027.vercel.app/",
+  "tags": ["React", "CSS", "Prototype"],
+  "type": "Website",
+  "thumbnail": "/assets/mimamsa-thumbnail.png",
+  "order": 3
+}

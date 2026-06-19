@@ -1,0 +1,10 @@
+{
+  "title": "PaperFlow",
+  "description": "Automation workflow to extract data from any paper.",
+  "url": "https://github.com/RamashrayS/PaperFlow",
+  "tags": ["Automation", "Python", "OCR"],
+  "type": "Automation",
+  "thumbnail": "/assets/paperflow-thumbnail.png",
+  "videoUrl": "/assets/paper_workflow.webm",
+  "order": 2
+}

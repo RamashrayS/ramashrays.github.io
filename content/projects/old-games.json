@@ -1,0 +1,9 @@
+{
+  "title": "Old Games",
+  "description": "Itch page of my old game development profile",
+  "url": "https://jacezom.itch.io/",
+  "tags": ["Games", "Itch.io", "Gamedev"],
+  "type": "Website",
+  "thumbnail": "/assets/jacezom-thumbnail.png",
+  "order": 5
+}

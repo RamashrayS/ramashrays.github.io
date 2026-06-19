@@ -1,0 +1,9 @@
+{
+  "title": "MedKundali",
+  "description": "Website of our Startup MedKundali",
+  "url": "https://med-kundali.vercel.app/",
+  "tags": ["Next.js", "Tailwind CSS", "Startup"],
+  "type": "Website",
+  "thumbnail": "/assets/med-kundali-thumbnail.png",
+  "order": 4
+}

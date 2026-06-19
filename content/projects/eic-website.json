@@ -1,0 +1,9 @@
+{
+  "title": "EIC website",
+  "description": "A prototype website for our college E-cell.",
+  "url": "https://eic-new.vercel.app/",
+  "tags": ["Next.js", "Tailwind CSS", "Framer Motion"],
+  "type": "Website",
+  "thumbnail": "/assets/eic-thumbnail.png",
+  "order": 1
+}
