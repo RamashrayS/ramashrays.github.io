@@ -2,7 +2,6 @@
 title: "A Utopian Dream"
 type: "Article"
 date: "May 24, 2026"
-readTime: "7 min read"
 excerpt: "An exploration of an ideal world powered by open-source science, decentralized compute, and clean intelligence. Can we build a collaborative future?"
 tags: ["science", "open-source", "philosophy", "technology"]
 ---

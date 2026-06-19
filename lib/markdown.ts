@@ -10,7 +10,6 @@ export interface PostMetadata {
   title: string;
   type: string;
   date: string;
-  readTime: string;
   excerpt: string;
   tags: string[];
 }
@@ -46,7 +45,6 @@ export function getAllPosts(): PostMetadata[] {
         title: data.title || "",
         type: data.type || "Blog",
         date: data.date || "",
-        readTime: data.readTime || "1 min read",
         excerpt: data.excerpt || "",
         tags: data.tags || [],
       } as PostMetadata;
@@ -79,7 +77,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
         title: data.title || "",
         type: data.type || "Blog",
         date: data.date || "",
-        readTime: data.readTime || "1 min read",
         excerpt: data.excerpt || "",
         tags: data.tags || [],
       } as PostMetadata,

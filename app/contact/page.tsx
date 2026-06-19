@@ -112,7 +112,7 @@ export default function Contact() {
                     rows={5}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Type your message..."
+                    placeholder="Type thy message..."
                     className="w-full bg-[#121212] border border-white/10 rounded-xl p-3.5 text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all duration-300 w-full text-sm font-sans resize-none"
                   />
                 </div>

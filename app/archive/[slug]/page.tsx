@@ -35,8 +35,6 @@ export default async function ArchivePostPage({ params }: PageProps) {
           </h1>
           <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-500 font-mono">
             <span>{metadata.date}</span>
-            <span>&bull;</span>
-            <span>{metadata.readTime}</span>
           </div>
         </header>
 

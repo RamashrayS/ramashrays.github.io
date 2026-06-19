@@ -2,7 +2,6 @@
 title: "The Journey So Far"
 type: "Blog"
 date: "June 15, 2026"
-readTime: "5 min read"
 excerpt: "A reflection on my path through physics, coding, and the spaces where they intersect. From writing my first game to simulating complex physical systems."
 tags: ["physics", "coding", "personal", "reflections"]
 ---
