@@ -11,8 +11,11 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Ramashray | Portfolio",
+  title: "RamashrayS",
   description: "Physics student, builder, and curious problem solver.",
+  icons: {
+    icon: "/assets/static.webp",
+  },
 };
 
 export default function RootLayout({
