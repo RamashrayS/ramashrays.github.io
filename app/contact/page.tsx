@@ -121,7 +121,6 @@ export default function Contact() {
                   <p className="text-xs font-mono text-red-400">{error}</p>
                 )}
 
-                <div className="space-y-4">
                   <button
                     type="submit"
                     disabled={submitting}
@@ -133,18 +132,6 @@ export default function Contact() {
                       <span>Send Message</span>
                     )}
                   </button>
-
-                  {/* Download CV Button below the main button */}
-                  <div className="text-center">
-                    <a
-                      href="/assets/cv.pdf"
-                      download="Ramashray_Sahu_CV.pdf"
-                      className="inline-flex items-center space-x-1.5 text-xs text-neutral-500 hover:text-neutral-300 font-mono transition-colors duration-300"
-                    >
-                      <span>[ download cv ]</span>
-                    </a>
-                  </div>
-                </div>
               </form>
             )}
           </div>
