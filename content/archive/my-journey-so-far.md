@@ -19,6 +19,7 @@ I have defined my life purpose is to find out answers to Humanity's innate quest
 - Why does the universe exist?
 - Why we exist?
 - What or who is god if he exists?
+
 Now I am quite aware the probability of me finding these are next to none but the probability of me dying with regret if I dont even try is like 100%. 
 So I will keep on doing what am doing.
 
