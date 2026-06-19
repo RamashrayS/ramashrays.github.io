@@ -13,16 +13,17 @@ export default function CommentSection({ postSlug }: { postSlug: string }) {
 
     const script = document.createElement("script");
     script.src = "https://giscus.app/client.js";
-    
+
     // Giscus configuration parameters matching GitHub Discussions backend.
-    // Replace these values with the final target repository properties when deploying.
-    script.setAttribute("data-repo", "RamashrayS/ramashray"); 
-    script.setAttribute("data-repo-id", "R_kgDONqgA4g");      
-    script.setAttribute("data-category", "Comments");          
-    script.setAttribute("data-category-id", "DIC_kwDONqgA4s4Cka-Z"); 
-    
+    // Repo and Repo-ID are successfully resolved for your repository: RamashrayS/ramashrays.github.io
+    script.setAttribute("data-repo", "RamashrayS/ramashrays.github.io");
+    script.setAttribute("data-repo-id", "R_kgDOS-RFUQ");
+    script.setAttribute("data-category", "Comments");
+    // Note: After enabling Discussions, get the exact category ID from giscus.app and replace it below:
+    script.setAttribute("data-category-id", "DIC_kwDOS-RFUc4C_eZm");
+
     // Mapping strategy: using URL pathname ensures each post gets its own discussion thread automatically
-    script.setAttribute("data-mapping", "pathname");           
+    script.setAttribute("data-mapping", "pathname");
     script.setAttribute("data-strict", "1");
     script.setAttribute("data-reactions-enabled", "0");        // Disabled to maintain a distraction-free, reading-focused layout
     script.setAttribute("data-emit-metadata", "0");
