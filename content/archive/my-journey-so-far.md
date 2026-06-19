@@ -3,7 +3,7 @@ title: "The Journey So Far"
 type: "Blog"
 date: "June 15, 2026"
 readTime: "5 min read"
-excerpt: "A reflection on my and where I see myself heading."
+excerpt: "A reflection on my past and where I see myself heading."
 tags: ["physics", "coding", "personal", "reflections"]
 ---
 
