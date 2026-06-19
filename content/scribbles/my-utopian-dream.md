@@ -30,4 +30,25 @@ But to accelerate to that point in the future, in my Utopia I believe if humans 
 
 In my world no human hates another because there is no reason to hate we are all part of the same species and we all have the same common goal that unites us. The world is a big family with everyone supporting anything required to achieve our combined goal.
 
-Everyone doing what they are needed to do without any personal desire.
+Everyone doing what they are needed to do without any personal desires or greed. 
+
+Its like we need to make a rocket to land on "X" planet, So the scientist and engineer wont have to wait for funds and get approvals they would just get the materials transported to them by the manufacturer who gets his raw materials from the miners and they do this without money because food is secured as the farmers grow crops for everyone, the milkman farms milk for everyone. With all the people (so many scientists and capable people) we could even boost agriculture productivity so high food will be secured for everyone. I hope you get the point, I know its so hard to imagine the world without money or any form of exchange system but this is a *"hypothetical scenario"*.
+
+In this world people are even willing to sacrifice themselves if required for the progression of our endeavour. *(Controversial part: If a sacrifice is required a person who cannot contribute any further to the cause is selected and everyone even the person himself agrees to being sacrificed selflessly in the name of progress)*
+
+With so much fast progress we would get to a point where almost everything is automated by science then humans can just spend all their time and energy united into finding the big answers, and we reach their much faster than any prediction any of us could make.
+
+***This is a hypothetical utopian sscenario, I dont expect you to agree with this***
+
+## Some questions I faced when I put forth this idea
+
+1. What happens after we get the answers?
+   #I say depends on the answers
+2. So you would sacrifice someone else rather than yourself, Whats so selfless in that?
+   #If I cant contribute any further am willing to be the sacrifice myself, the people required for the future must survive
+
+Many many more questions these were the ones on top of my head.
+
+**Thanks for reading my crazy perspective!**
+
+Feel free to give your opinion or questions in the discussion below.
