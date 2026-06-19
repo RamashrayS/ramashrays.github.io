@@ -2,11 +2,12 @@
 title: "A Utopian Dream"
 type: "Article"
 date: "Jun 17, 2026"
-excerpt: "An exploration of an ideal world powered by open-source science, decentralized compute, and clean intelligence. Can we build a collaborative future?"
+excerpt: "My hypothetical utopian world that I want you to see"
 tags: ["science", "open-source", "philosophy", "technology"]
 ---
 
-Disclaimer: I dont want to hurt anyones personal, philosophical or spiritual ideology (Please pardon me if I do so by any chance). This article doesnt promotoe hate to any individual or community rather it only wants to bring our species even closer*
+***Disclaimer:*** 
+I dont want to hurt anyones personal, philosophical or spiritual ideology (Please pardon me if I do so by any chance). This article doesnt promotoe hate to any individual or community rather it only wants to bring our species even closer
 
 I wanted to share this very hypothetical utopian idea I have in my mind for some while. Recently out of nowhere I have discussed this idea with a bunch of friends and family as well, and wanted to share the overall gist of it.
 
@@ -23,8 +24,10 @@ That is because nobody has a satisfactory answer to these questions yet they jus
 
 ## My Utopia
 
-My personal believe is that maybe not in a 1000, 1000000 or 1000000000... years but sometime in the future humanity will find answers to these. (And if you are gonna say we would be wiped out by then, in my utopia I believe our species is intelligent and capable enough to survive any threats to it, even if our planet is wiped out even if our star system is gone there will always be a human base somewhere in the universe)
+My personal believe is that maybe not in a *1000, 1000000 or 1000000000...* years but sometime in the future humanity will find answers to these. (And if you are gonna say we would be wiped out by then, in my utopia I believe our species is intelligent and capable enough to survive any threats to it, even if our planet is wiped out even if our star system is gone there will always be a human base somewhere in the universe)
 
-But to accelerate to that point in the future, in my Utopia I believe if humans were not separated by boundaries of any countries, religions or their personal ideas rather united as one powerful force to find these answers we would get there much much faster. In my world no human hates another because there is no reason to hate we are all part of the same species and we all have the same common goal that unites us. The world is a big family with everyone supporting anything required to achieve our combined goal.
+But to accelerate to that point in the future, in my Utopia I believe if humans were not separated by boundaries of any countries, religions or their personal ideas rather united as one powerful force to find these answers we would get there much much faster. 
+
+In my world no human hates another because there is no reason to hate we are all part of the same species and we all have the same common goal that unites us. The world is a big family with everyone supporting anything required to achieve our combined goal.
 
 Everyone doing what they are needed to do without any personal desire.
