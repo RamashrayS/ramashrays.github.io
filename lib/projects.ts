@@ -1,24 +1,44 @@
 import fs from "fs";
 import path from "path";
 
+export interface ProjectFile {
+  name: string;
+  url: string;
+}
+
+export interface ProjectMedia {
+  type: "image" | "video";
+  url: string;
+  caption?: string;
+}
+
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
+export interface ModalDetails {
+  description?: string;
+  technologies?: string[];
+  materials?: string[];
+  buildProcess?: string;
+  keyLearnings?: string;
+  attachedFiles?: ProjectFile[];
+  media?: ProjectMedia[];
+  links?: ProjectLink[];
+}
+
 export interface Project {
   title: string;
   description: string;
-  url: string;
+  url?: string;
   tags: string[];
-  type:
-    | "Website"
-    | "Web App"
-    | "Game"
-    | "Automation"
-    | "AI Model"
-    | "Research Project"
-    | "PDF / Paper"
-    | "GitHub Repository"
-    | "Tool";
+  type: string;
   thumbnail?: string;
   videoUrl?: string;
   order?: number;
+  openModal?: boolean;
+  modalDetails?: ModalDetails;
 }
 
 const projectsDirectory = path.join(process.cwd(), "content/projects");

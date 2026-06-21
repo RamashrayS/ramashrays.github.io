@@ -76,31 +76,26 @@ interface ProjectCardProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   iframeSupported: boolean;
+  onOpenModal: (project: Project) => void;
 }
 
-function ProjectCard({ project, isHovered, onMouseEnter, onMouseLeave, iframeSupported }: ProjectCardProps) {
+function ProjectCard({ project, isHovered, onMouseEnter, onMouseLeave, iframeSupported, onOpenModal }: ProjectCardProps) {
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const isModalProject = project.openModal || !project.url;
 
   const handleCardClick = () => {
-    window.open(project.url, "_blank", "noopener,noreferrer");
-  };
-
-  useEffect(() => {
-    if (videoRef.current) {
-      if (isHovered) {
-        videoRef.current.play().catch(() => { });
-      } else {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
-      }
+    if (isModalProject) {
+      onOpenModal(project);
+    } else {
+      window.open(project.url, "_blank", "noopener,noreferrer");
     }
-  }, [isHovered]);
+  };
 
   const renderPreview = () => {
     const isWebsiteType = project.type === "Website" || project.type === "Web App";
 
-    if (isWebsiteType && iframeSupported && isHovered) {
+    if (isWebsiteType && iframeSupported && isHovered && project.url) {
       return (
         <div className="absolute inset-0 w-full h-full bg-[#0D0D0D] transition-all duration-500 ease-out transform scale-100 opacity-100 z-30">
           {!iframeLoaded && (
@@ -113,24 +108,8 @@ function ProjectCard({ project, isHovered, onMouseEnter, onMouseLeave, iframeSup
             title={project.title}
             onLoad={() => setIframeLoaded(true)}
             sandbox="allow-scripts allow-same-origin allow-popups"
-            className={`w-[400%] h-[400%] origin-top-left scale-[0.25] border-none pointer-events-none transition-opacity duration-500 ${
-              iframeLoaded ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        </div>
-      );
-    }
-
-    if (project.videoUrl && isHovered) {
-      return (
-        <div className="absolute inset-0 w-full h-full bg-[#0D0D0D] transition-all duration-500 ease-out transform scale-100 opacity-100 z-30">
-          <video
-            ref={videoRef}
-            src={project.videoUrl}
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
+            className={`w-[400%] h-[400%] origin-top-left scale-[0.25] border-none pointer-events-none transition-opacity duration-500 ${iframeLoaded ? "opacity-100" : "opacity-0"
+              }`}
           />
         </div>
       );
@@ -240,7 +219,183 @@ function ProjectCard({ project, isHovered, onMouseEnter, onMouseLeave, iframeSup
         <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
           {project.description}
         </p>
-        {project.type === "GitHub Repository" && <GitHubStats url={project.url} />}
+        {project.type === "GitHub Repository" && project.url && <GitHubStats url={project.url} />}
+      </div>
+    </div>
+  );
+}
+
+// Project Detail Modal Component
+function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // Trigger entrance animation on mount
+    const timeout = setTimeout(() => setIsOpen(true), 50);
+
+    // Disable background body scroll
+    document.body.style.overflow = "hidden";
+
+    // Dismiss on Escape key
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      clearTimeout(timeout);
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setTimeout(onClose, 300); // Wait for fade-out/scale-down animation to complete
+  };
+
+  const details = project.modalDetails;
+
+  return (
+    <div className="fixed inset-0 z-50 overflow-y-auto">
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"
+          }`}
+        onClick={handleClose}
+      />
+
+      {/* Scrolling Container */}
+      <div
+        className="relative min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-10"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            handleClose();
+          }
+        }}
+      >
+        {/* Modal Content Panel */}
+        <div
+          className={`relative w-full max-w-4xl bg-[#151515] border border-white/[0.08] rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 transform ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+        >
+          {/* Close button (Floating top right) */}
+          <button
+            onClick={handleClose}
+            className="absolute top-4 right-4 z-50 p-2 bg-[#1A1A1A] border border-white/10 hover:border-white/20 rounded-full text-neutral-400 hover:text-white transition-all duration-200 cursor-pointer shadow-lg"
+            aria-label="Close details"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+
+
+          {/* Content Details Layout */}
+          <div className="p-6 sm:p-8 md:p-10 max-h-[75vh] overflow-y-auto select-text">
+            <div className="w-full space-y-6 sm:space-y-8 pr-2">
+              {/* Header Information */}
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                  {project.title}
+                </h2>
+              </div>
+
+              {/* Description */}
+              <div className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal flex flex-col space-y-4">
+                {(() => {
+                  const text = details?.description || project.description;
+                  if (!text) return null;
+                  const parts = text.split(/(!\[.*?\]\(.*?\))/g);
+                  return parts.map((part, index) => {
+                    const match = part.match(/!\[(.*?)\]\((.*?)\)/);
+                    if (match) {
+                      const alt = match[1];
+                      const src = match[2];
+                      return (
+                        <div key={index} className="my-4 max-w-xl bg-black/20 border border-white/[0.05] rounded-xl overflow-hidden shadow-md">
+                          <img src={src} alt={alt} className="w-full h-auto object-contain" />
+                          {alt && (
+                            <div className="p-3 bg-black/40 border-t border-white/5 text-center">
+                              <p className="text-xs text-neutral-400 font-mono">{alt}</p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }
+                    return (
+                      <span key={index} className="whitespace-pre-line">
+                        {part}
+                      </span>
+                    );
+                  });
+                })()}
+              </div>
+
+              {/* Additional Media Gallery & Files */}
+              {((details?.media && details.media.length > 0) || (details?.attachedFiles && details.attachedFiles.length > 0)) && (
+                <div className="space-y-6 border-t border-white/[0.05] pt-6">
+                  <h3 className="text-xs tracking-wider uppercase font-semibold text-neutral-400 font-mono">
+                    Gallery
+                  </h3>
+
+                  {/* Media Gallery */}
+                  {details?.media && details.media.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      {details.media.map((item, idx) => (
+                        <div key={idx} className="group relative bg-black/40 border border-white/[0.05] rounded-xl overflow-hidden shadow-md">
+                          {item.type === "video" ? (
+                            <video src={item.url} controls className="w-full h-auto object-cover aspect-video" />
+                          ) : (
+                            <img src={item.url} alt={item.caption || ""} className="w-full h-auto object-cover aspect-video" />
+                          )}
+                          {item.caption && (
+                            <div className="p-3 bg-black/60 border-t border-white/5">
+                              <p className="text-xs text-neutral-400 leading-snug font-mono">{item.caption}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Attached Files List */}
+                  {details?.attachedFiles && details.attachedFiles.length > 0 && (
+                    <div className="space-y-3 pt-2">
+                      <h4 className="text-xs tracking-wider uppercase font-semibold text-neutral-500 font-mono">
+                        Files
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {details.attachedFiles.map((file, i) => (
+                          <a
+                            key={i}
+                            href={file.url}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/10 text-sm text-white transition-all group font-mono"
+                          >
+                            <svg className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            <div className="flex-1 min-w-0 text-left">
+                              <p className="text-sm font-medium truncate group-hover:text-white transition-colors">{file.name}</p>
+
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   );
@@ -252,6 +407,7 @@ export default function BuildsClient({ initialProjects }: { initialProjects: Pro
   const [isPlaying, setIsPlaying] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [iframeSupport, setIframeSupport] = useState<Record<string, boolean>>({});
+  const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -293,8 +449,11 @@ export default function BuildsClient({ initialProjects }: { initialProjects: Pro
 
     initialProjects.forEach(async (project) => {
       if (project.type === "Website" || project.type === "Web App") {
-        const isSupported = await checkIframeSupport(project.url);
-        setIframeSupport(prev => ({ ...prev, [project.url]: isSupported }));
+        const url = project.url;
+        if (url) {
+          const isSupported = await checkIframeSupport(url);
+          setIframeSupport(prev => ({ ...prev, [url]: isSupported }));
+        }
       }
     });
   }, [initialProjects]);
@@ -318,9 +477,8 @@ export default function BuildsClient({ initialProjects }: { initialProjects: Pro
   return (
     <div className="relative min-h-screen bg-[#1A1A1A] text-white flex flex-col font-sans selection:bg-white selection:text-black overflow-x-hidden">
       <main
-        className={`flex-1 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-32 pb-36 transition-all duration-1000 ease-out transform ${
-          mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className={`flex-1 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-32 pb-36 transition-all duration-1000 ease-out transform ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
       >
         {/* Project Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -331,7 +489,8 @@ export default function BuildsClient({ initialProjects }: { initialProjects: Pro
               isHovered={hoveredIndex === idx}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
-              iframeSupported={iframeSupport[project.url] ?? true}
+              iframeSupported={project.url ? (iframeSupport[project.url] ?? true) : false}
+              onOpenModal={setActiveModalProject}
             />
           ))}
         </div>
@@ -340,9 +499,8 @@ export default function BuildsClient({ initialProjects }: { initialProjects: Pro
       {/* Floating Standing Mascot at Bottom Right */}
       <div
         onClick={handleMascotClick}
-        className={`fixed bottom-2 right-2 z-10 w-[75px] sm:w-[95px] md:w-[115px] lg:w-[135px] select-none transition-all duration-1000 delay-300 transform ${
-          isPlaying ? "cursor-default" : "cursor-pointer"
-        } ${mounted ? "opacity-30 sm:opacity-50 md:opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`fixed bottom-2 right-2 z-10 w-[75px] sm:w-[95px] md:w-[115px] lg:w-[135px] select-none transition-all duration-1000 delay-300 transform ${isPlaying ? "cursor-default" : "cursor-pointer"
+          } ${mounted ? "opacity-30 sm:opacity-50 md:opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         {/* Transparent Video Layer */}
         <video
@@ -351,21 +509,27 @@ export default function BuildsClient({ initialProjects }: { initialProjects: Pro
           muted
           playsInline
           onEnded={() => setIsPlaying(false)}
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${
-            isPlaying ? "opacity-100 z-20 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
-          }`}
+          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${isPlaying ? "opacity-100 z-20 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
+            }`}
         />
 
         {/* Idle Image Layer */}
         <img
           src="/assets/standing.webp"
           alt="Standing mascot"
-          className={`w-full h-auto object-contain transition-opacity duration-300 ${
-            !isPlaying ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
+          className={`w-full h-auto object-contain transition-opacity duration-300 ${!isPlaying ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
           draggable="false"
         />
       </div>
+
+      {/* Project Detail Modal Overlay */}
+      {activeModalProject && (
+        <ProjectModal
+          project={activeModalProject}
+          onClose={() => setActiveModalProject(null)}
+        />
+      )}
     </div>
   );
 }
