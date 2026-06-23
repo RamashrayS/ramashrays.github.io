@@ -258,6 +258,71 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
   const details = project.modalDetails;
 
+  if (project.pdfUrl) {
+    return (
+      <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 md:p-10">
+        {/* Backdrop */}
+        <div
+          className={`fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
+          onClick={handleClose}
+        />
+
+        {/* Modal Content Panel */}
+        <div
+          className={`relative w-full max-w-5xl h-[85vh] bg-[#151515] border border-white/[0.08] rounded-2xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 transform ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+        >
+          {/* Header Bar */}
+          <div className="p-4 sm:p-6 border-b border-white/[0.08] flex items-center justify-between bg-[#1A1A1A]">
+            <div className="flex-1 min-w-0 pr-4">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-white truncate">
+                Handwritten notes of Introduction to Cosmolgy by Barbara Ryden
+              </h2>
+              <p className="text-xs sm:text-sm text-neutral-400 truncate mt-1">
+                (sorry if u cant undestand it, i made it for myself to read)
+              </p>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              {/* Download Button */}
+              <a
+                href={project.pdfUrl}
+                download
+                className="flex items-center space-x-2 px-4 py-2 bg-white text-black hover:bg-neutral-200 active:scale-95 transition-all rounded-xl font-medium text-xs sm:text-sm shadow-md"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                <span className="hidden sm:inline">Download</span>
+              </a>
+
+              {/* Close Button */}
+              <button
+                onClick={handleClose}
+                className="p-2 bg-[#1A1A1A] border border-white/10 hover:border-white/20 rounded-xl text-neutral-400 hover:text-white transition-all duration-200 cursor-pointer shadow-lg"
+                aria-label="Close preview"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* PDF Preview Frame */}
+          <div className="flex-1 w-full bg-[#0D0D0D] relative p-1.5 sm:p-3">
+            <iframe
+              src={`${project.pdfUrl}#toolbar=1`}
+              title={project.title}
+              className="w-full h-full border-none rounded-lg sm:rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
       {/* Backdrop */}

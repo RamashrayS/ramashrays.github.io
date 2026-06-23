@@ -36,6 +36,7 @@ export interface Project {
   type: string;
   thumbnail?: string;
   videoUrl?: string;
+  pdfUrl?: string;
   order?: number;
   openModal?: boolean;
   modalDetails?: ModalDetails;

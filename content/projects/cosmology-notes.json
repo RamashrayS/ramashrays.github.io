@@ -1,0 +1,10 @@
+{
+  "title": "Hand notes I",
+  "description": "Handwritten notes of Introduction to Cosmolgy by Barbara Ryden",
+  "tags": ["Physics", "Cosmology", "Notes"],
+  "type": "PDF Notes",
+  "thumbnail": "/assets/cosmology_notes_thumbnail.jpg",
+  "pdfUrl": "/assets/Introtocosmo_notes.pdf",
+  "order": 5.5,
+  "openModal": true
+}
