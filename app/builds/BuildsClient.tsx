@@ -219,7 +219,6 @@ function ProjectCard({ project, isHovered, onMouseEnter, onMouseLeave, iframeSup
         <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
           {project.description}
         </p>
-        {project.type === "GitHub Repository" && project.url && <GitHubStats url={project.url} />}
       </div>
     </div>
   );

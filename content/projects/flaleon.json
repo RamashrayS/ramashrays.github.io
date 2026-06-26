@@ -1,0 +1,13 @@
+{
+  "title": "Flaleon",
+  "description": "A ML framework to Forecast, Nowcast and Classify Solar Flares into X,M or C classes.",
+  "url": "https://github.com/RamashrayS/Flaleon",
+  "tags": [
+    "Machine Learning",
+    "Python",
+    "Solar Physics"
+  ],
+  "type": "Machine Learning",
+  "thumbnail": "/assets/flaleon-thumbnail.png",
+  "order": 1
+}
