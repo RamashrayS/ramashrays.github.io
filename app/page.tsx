@@ -11,7 +11,7 @@ export default function Home() {
 
   const headlineText = "Hey, Ramashray here.";
   const paragraphText =
-    "I'm a science student, builder, and curious problem solver. I enjoy exploring new ideas and questions we don't yet have answers to. Most of my time is spent learning, experimenting, and doing whatever I find exciting.\n\nThanks for stopping by!";
+    "I am by definition a studnet of science but most of my time, I just do whatever I find interesting at the moment. \n\nThanks for stopping by!";
 
   useEffect(() => {
     setMounted(true);
